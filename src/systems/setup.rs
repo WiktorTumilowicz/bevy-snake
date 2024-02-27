@@ -4,7 +4,7 @@ use bevy::{
     window::PrimaryWindow,
 };
 
-use crate::components::background::{Board, Coordinates, Tile};
+use crate::components::background::{Board, Tile};
 
 pub fn initialize_grid(window_query: Query<&Window, With<PrimaryWindow>>, mut commands: Commands) {
     let window = window_query.get_single().unwrap();
@@ -52,7 +52,6 @@ pub fn spawn_background(
                             ..Default::default()
                         },
                         Tile {},
-                        Coordinates::new(x, y),
                     ));
                 });
         });
